@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Selección de Asignatura -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Asignatura</ion-label>
+          <ion-select [(ngModel)]="asignaturaSeleccionada" (ionChange)="verificarSeleccion()">
+            <ion-select-option value="Matematicas">Matematicas</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Selección de Sección -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Sección</ion-label>
+          <ion-select [(ngModel)]="seccionSeleccionada" (ionChange)="verificarSeleccion()">
+            <ion-select-option value="mat001">mat001</ion-select-option>
+            <ion-select-option value="mat002">mat002</ion-select-option>
+            <ion-select-option value="mat003">mat003</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botón Generar QR -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="primary" [disabled]="!puedeGenerarQR" (click)="generarQR()">
+          Generar QR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Imagen de QR Generado -->
+    <ion-row *ngIf="mostrarQR">
+      <ion-col size="12" text-center>
+        <img [src]="qrImage" alt="QR Code" style="width: 200px; height: 200px; margin: 20px auto;">
+        <h3>{{ asignaturaSeleccionada }} - {{ seccionSeleccionada }}</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

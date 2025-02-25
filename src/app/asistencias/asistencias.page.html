@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis asistencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Botón para escoger asignatura -->
+  <ion-button expand="block" (click)="mostrarOpciones()">
+    Escoger Asignatura
+  </ion-button>
+
+  <!-- Lista desplegable de asignaturas -->
+  <ion-list *ngIf="mostrarAsignaturas">
+    <ion-item (click)="seleccionarAsignatura('Matematicas', 'mat001')">
+      <ion-label>
+        Matematicas - mat001
+      </ion-label>
+    </ion-item>
+    <!-- Puedes añadir más asignaturas aquí -->
+  </ion-list>
+
+  <!-- Spinner de carga -->
+  <div *ngIf="cargando" style="text-align: center; margin-top: 20px;">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando...</p>
+  </div>
+
+  <!-- Mensaje cuando se selecciona una asignatura -->
+  <div *ngIf="asignaturaSeleccionada && !cargando" style="text-align: center; margin-top: 20px;">
+    <h3>{{ asignaturaSeleccionada.nombre }} - {{ asignaturaSeleccionada.codigo }}</h3>
+    <p style="color: red; font-weight: bold;">No se registra asistencia</p>
+  </div>
+</ion-content>

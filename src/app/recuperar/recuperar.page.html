@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" padding>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size-md="6" size-xs="12">
+        <div text-center>
+          <h2>Recuperar Contraseña</h2>
+          <p>Por favor, ingresa tu dirección de correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
+        </div>
+
+        <!-- Formulario de correo -->
+        <form #form="ngForm" (ngSubmit)="sendRecoveryEmail(form)">
+          <!-- Campo para el correo -->
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input
+              type="email"
+              name="email"
+              placeholder="email@ejemplo.com"
+              ngModel
+              required
+              email
+              #emailInput="ngModel"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Mensaje de error -->
+          <ion-text color="danger" *ngIf="emailInput.invalid && emailInput.touched">
+            <p *ngIf="emailInput.errors?.['required']">El correo es obligatorio.</p>
+            <p *ngIf="emailInput.errors?.['email']">Debe ingresar un correo válido.</p>
+          </ion-text>
+
+          <!-- Botón para enviar la solicitud -->
+          <div padding>
+            <ion-button
+              size="large"
+              expand="block"
+              [disabled]="form.invalid"
+              type="submit"
+            >
+              Enviar
+            </ion-button>
+          </div>
+        </form>
+
+        <!-- Mensaje de confirmación -->
+        <div *ngIf="emailSent" text-center padding>
+          <p>Se ha enviado un enlace a tu correo <strong>{{ email }}</strong> para restablecer tu contraseña.</p>
+        </div>
+
+        <!-- Botón para regresar al login -->
+        <div padding>
+          <ion-button
+            size="large"
+            expand="block"
+            color="secondary"
+            (click)="goToLogin()"
+          >
+            Volver al Login
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrar asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size-md="6" size-sm="12" text-center>
+        <h2>Escanea el QR para registrar tu asistencia</h2>
+
+        <!-- Botón Escanear QR -->
+        <ion-button expand="full" color="primary" (click)="escanearQR()">
+          Escanear QR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

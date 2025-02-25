@@ -1,0 +1,38 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombreUsuario": "profesor",
+      "clave": "duoc",
+      "tipo": "docente",
+      "nombre": "Benjamin Reyes",
+      "materias": [
+        {
+          "materia": "Matematicas",
+          "secciones": [
+            "mat001",
+            "mat002",
+            "mat003"
+          ],
+          "materiaActual": "Matematicas",
+          "seccionActual": "mat001"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nombreUsuario": "estudiante",
+      "clave": "sebastian",
+      "tipo": "estudiante",
+      "nombre": "Sebastián Parra",
+      "materias": [
+        {
+          "materia": "Matematicas",
+          "secciones": [
+            "mat001"
+          ]
+        }
+      ]
+    }
+  ]
+}

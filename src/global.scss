@@ -1,0 +1,48 @@
+/* App Global CSS */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+:root {
+  --ion-color-primary: #012C56; 
+  --ion-color-secondary: #0cd1e8; 
+  --ion-color-light: #ffffff; 
+  --ion-color-dark: #222428; 
+  --ion-color-text: #012C56; 
+
+  --ion-background-color: #ffffff; 
+  --ion-text-color: #012C56; 
+}
+
+body, ion-app, ion-content {
+  background-color: var(--ion-background-color);
+  color: var(--ion-text-color);
+}
+
+ion-toolbar {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-primary); /* Cambiar color del texto en la barra a azul oscuro */
+}
+
+ion-button {
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-light); /* Color de texto en los botones será blanco */
+}
+
+ion-menu {
+  --background: var(--ion-background-color);
+  --color: var(--ion-color-primary); /* Menú también tendrá texto azul oscuro */
+}
+
+/* Asegurar que los íconos también sean de color azul oscuro */
+ion-icon {
+  color: var(--ion-color-primary);
+}

@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Pagina de Inicio (Docente)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pagina de Inicio (Docente)</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Mensaje de bienvenida -->
+  <div style="text-align: center; margin-top: 20px;">
+    <h2>Bienvenido profesor</h2>
+  </div>
+
+  <!-- Botones de navegación -->
+  <ion-grid style="margin-top: 30px;">
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="primary" [routerLink]="['/asignaturas']">
+          Ir a Asignaturas
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="secondary" [routerLink]="['/asistencias']">
+          Ir a Asistencias
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="tertiary" [routerLink]="['/clave']">
+          Cambiar Clave
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="success" [routerLink]="['/qr-app']">
+          Generar Qr
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botón de Cerrar Sesión -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" color="danger" (click)="cerrarSesion()">
+          Cerrar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
